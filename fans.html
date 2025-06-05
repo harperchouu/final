@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>粉絲故事</title>
+  <style>
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .lightbox-overlay.show {
+    display: flex;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .lightbox-next {
+    position: absolute;
+    right: 30px;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+  .lightbox-prev {
+    position: absolute;
+    left: 30px;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+  .story-block {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 80px;
+    }
+  .story-block.reverse {
+      flex-direction: row-reverse;
+    }
+  .avatar {
+      width: 200px;
+      text-align: center;
+    }
+  .avatar img {
+      width: 200px;
+      height: auto;
+    }
+  .avatar p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #333;
+    }
+  .speech-bubble {
+      background-color: #FFDEEA;
+      padding: 30px;
+      border-radius: 30px;
+      position: relative;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 700px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      border: 2px solid #f8b9cc;
+    }
+  </style>
+  <style>
+    .article-button-container {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+
+    .pink-button {
+      background-color: #ffdeea;
+      color: #333;
+      font-size: 18px;
+      padding: 12px 32px;
+      border: none;
+      text-decoration: none;
+
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .pink-button:hover,
+    .pink-button:active {
+      background-color: #ffd1e6;
+    }
+  </style>
+  <style>
+    .nytmm_photo {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .nytmm_photo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+
+    .caption .credit {
+      display: block;
+      margin-top: 4px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="story-block">
+    <div class="avatar">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲6.png" alt="Abby">
+      <p>Abby（化名）</p>
+    </div>
+    <div class="speech-bubble" style="margin-top: -20px;">
+        從首爾回美國待不到兩天又飛首爾，連續兩次。一年飛了七十多個航班，雖然很累，但見到我喜歡的偶像就感到很幸福，他知道我為了追他很累，所以（偶像）也會加倍關心我。
+        這樣做是因為我想跟喜歡的人見面，喜歡看他在舞台上閃閃發光的樣子，想跟他說話，每次（見到面）都很幸福，他沒有讓我失望過。        
+    </div>
+  </div>
+
+  <div class="story-block reverse">
+    <div class="avatar">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲1.png" alt="Jennie">
+      <p>Jennie（化名）</p>
+    </div>
+    <div class="speech-bubble">
+        目前來看，最瘋狂大概是飛去美國陪他們巡吧，之後搞不好會有更瘋狂的，我也不知道。當時只是因為我大概跟他們有分離焦慮症，我想到可能連續三個月看不到我擔，我就覺得我快要窒息了，每天都非常焦躁，為了解決這個不安，就決定去了。去完回來就好非常多。回頭看的話，會覺得雖然蠻瘋的，但整個過程我大概會記得一輩子，是人生裡面很好的一段歷程吧，在最好的時間、最好的地方，發生了最好的事，然後成為了美好的回憶。
+
+    </div>
+  </div>
+  <div class="story-block">
+    <div class="avatar">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲5.png" alt="Aerin">
+      <p>Aerin（化名）</p>
+    </div>
+    <div class="speech-bubble" style="margin-top: -80px;">
+        我在近期的回歸上花了近新台幣200萬元，其中與偶像的單獨合照花到13萬元，兩次回歸花了近400萬元。我對卡沒什麼興趣，我只對他們人有興趣 我喜歡能1對1的場，目前參加簽售會的次數已經多到跟偶像如朋友般自然。
+    </div>
+  </div>
+
+  <div class="story-block reverse">
+    <div class="avatar">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲3.png" alt="Sun">
+      <p>Sun（化名）</p>
+    </div>
+    <div class="speech-bubble">
+        剛開始他還是一名需要粉絲的練習生，而我給了他所需要的支持、他給予我對生活的滿滿動力。透過他的眼裡，我看見了豐富多采的世界，看見他次次逆境中開出燦爛的花，如果他幸福的話我會比他先流淚，這樣愛一個人的情緒我想只有追星可以帶給我。
+        因為自己追的是練習生而有銷量壓力買很多，每次都會盡自己最大的努力購買，但從下單到真正拿到商品，需要經歷近四個月的等待，而真正感到開心的，只有拆開包裹的那一刻，但也因為一直都有控制在自己能力範圍，所以說買了也不會後悔，就是有時候會因為一堆周邊佔空間而感到苦惱。        
+    </div>
+  </div>
+</body>
+</html>
+  <div class="story-block">
+    <div class="avatar">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲4.png" alt="邱比">
+      <p>邱比（化名）</p>
+    </div>
+    <div class="speech-bubble" style="margin-top: -20px;">
+        老實說我當時也不太敢細算自己到底花了多少錢，因為應該會蠻驚人的。但那段時間很常滑臉書社團，每天放學拿到手機後，第一個打開的不是 IG，而是社團，少則滑一兩小時，多的時候甚至會滑三個小時，一直在看卡價、刷貼文、跟單、找代購。那段時間其實是精神跟金錢的雙重消耗，但當時真的就是一股腦地想要「集齊全套」和「想要漂亮的小卡」的執念在支撐。現在回頭看會覺得那種心態真的太瘋，但也算是一段特別的經歷。    </div>
+  </div>
+  
+  <title>不花錢就追不到 粉絲的愛被區分等級</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 40px auto;
+      padding: 0 40px;
+      max-width: 800px;
+      line-height: 2;
+      color: #111;
+      background-color: #fff;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    p {
+      text-indent: 2em;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    strong {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <br><br>
+
+  <p>當代偶像產業的商業模式不再單純依賴音樂作品本身，而是結合許多精密設計的消費機制，將粉絲的愛「商品化」。從專輯附贈的隨機款式小卡、特典與簽售抽選，到私訊應用程式「泡泡」等，皆為娛樂公司經過層層設計創造出的情感交換關係——購買越多，參與越深，與偶像間的關係就更加緊密。這些機制為偶像產業製造稀缺性與不確定性。然而，只要有足夠的金錢就能突破門檻，這樣的稀缺性對多數人而言是限制，卻同時為少數人打開以金錢換取「被看見」機會的捷徑。粉絲購買的不僅是作品本身，更是展現投入程度的象徵性資本。</p>
+
+
+  <div style="float: right; margin: 10px 0 20px 20px; width: 480px;">
+    <div style="position: relative; width: 100%;">
+      <img src="/Users/yuanhsichou/Desktop/project/DSC04630.JPG" alt="粉絲與手舉紙板" style="width: 100%; height: auto; cursor: pointer;" onclick="openLightbox(0)" />
+      <div style="position: absolute; bottom: 15px; left: 8px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 7px; font-size: 14px; border-radius: 4px;">
+        點擊看更多
+      </div>
+    </div>
+  </div>
+
+  <p>「因為愛是很虛無的，要怎麼展現你真的很愛他呢？一部分是透過掌握具體的物質，就是你可以展現給別人看的東西。」國立政治大學新聞系教授王淑美說道。除了購買商品支持偶像外，另一項要價不菲的追星途徑為「追線下」——即粉絲親自參與線下活動。王淑美表示，歌曲、影像皆可以複製，但實體演出卻無法複製，粉絲能實際見到偶像的時間極其有限，娛樂公司正是利用這點，透過見面會、演唱會，製造出獨一無二的時刻，吸引粉絲投入大筆金額，只為爭取來自偶像的稀缺注意。</p>
+
+  <p>正在研究粉絲與偶像親密關係的政大傳播碩士學位學程三年級學生王孟肜解釋，現今的消費模式反映出一種娛樂公司將偶像作為情感商品，並大量被販賣的現象。粉絲透過消費獲得「類戀愛」的情感體驗，讓投入金錢成為他們換取情感的一種方式，「粉絲經常會說：『我之所以花錢，都是因為我愛你們啊。』」王孟肜笑著說道。</p>
+
+  <p>「娛樂公司在宣傳偶像時，也會為粉絲跟偶像的連結下定義，如果你（粉絲）愛我（偶像），你就要做什麼事情，會變成這個粉絲社群的潛規則。」王淑美也指出，由於粉絲都聚集在一起，社群凝視的力量強大，迫使粉絲在不知不覺中去滿足娛樂公司的消費要求。政大新聞系副教授柯裕棻補充，社群媒體也容易讓粉絲之間的比較與炫耀被放大，「比如一場演唱會的參與者大概幾萬人，可是一旦放到網路上不斷傳播，馬上就被全世界的粉絲看到了，最後就會變成一個很大的（事件）。」正因如此，在這樣的情感消費模式下，粉絲們有時也會感到負擔與壓力。</p>
+  <div class="article-button-container">
+    <a href="pro.html" class="pink-button">來看看你是哪種類型的粉絲吧！</a>
+  </div>
+  <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-prev" onclick="prevImage(event)">‹</div>
+    <div class="lightbox-next" onclick="nextImage(event)">›</div>
+  </div>
+
+  <script>
+    const imageList = [
+      "/Users/yuanhsichou/Desktop/project/DSC04630.JPG",
+      "/Users/yuanhsichou/Desktop/project/IMG_0923.JPG",
+      "/Users/yuanhsichou/Desktop/project/IMG_0953 (2).JPG"
+    ];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      event.stopPropagation();
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = imageList[currentIndex];
+      document.getElementById('lightbox').classList.add('show');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('show');
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % imageList.length;
+      document.getElementById('lightbox-img').src = imageList[currentIndex];
+    }
+    function prevImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+      document.getElementById('lightbox-img').src = imageList[currentIndex];
+    }
+  </script>
+</body>
+</html>
+  
+</body>
+</html>

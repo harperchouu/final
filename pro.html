@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>教授結果</title>
+</head>
+
+
+<div id="professor-section" style="text-align: center; margin-top: 50px;">
+  <img id="professor-img" src="" alt="Professor" style="max-width: 300px;">
+  <p id="professor-name" style="font-size: 20px; font-weight: bold; margin-top: 10px;"></p>
+  <p id="professor-text" style="font-size: 18px; max-width: 500px; margin: 20px auto; line-height: 1.6;"></p>
+</div>
+
+<script>
+
+  const pathHistory = sessionStorage.getItem("pathHistory");
+
+
+  const professorMap = {
+    "A": {
+      img: "/Users/yuanhsichou/Desktop/project/專家（心理師）.png",
+      name: "諮商心理師　李家雯",
+      text: "追星可能不是一時，而是追一輩子的長久連結，因此更需要練習適時地「登出」。當偶像暫時沒有消息的時候，或許他正在為工作而努力，粉絲也該把握這段時間，專注在自己的生活與成長。"
+    },
+    "B": {
+      img: "/Users/yuanhsichou/Desktop/project/專家（學姊）.png",
+      name: "政大傳播碩士學位學程三年級學生 王孟肜（研究粉絲與偶像親密關係） ",
+      text: "娛樂公司在企劃的過程中，是以異性戀為基礎去做企劃的設定，像女友粉的這種異性戀關係的建構，雖然提供給大部分的粉絲一個想像空間，但粉絲也會被困在這種情侶關係中，一直認為自己是像女友的關心，所以就要付出、犧牲更多，或是想要做很多勞動，如固定收聽（偶像音樂作品）、刷榜等。"
+    },
+    "C": {
+      img: "/Users/yuanhsichou/Desktop/project/專家（柯）.png",
+      name: "政大新聞系副教授 柯裕棻",
+      text: "理性追星講的是有所節制，並且知道自己的能力所限在哪裡，那這個（追星的行為）就會變成是嗜好的一部分。"
+    }
+  };
+  let selected = "";
+
+  if (pathHistory && pathHistory.includes("yes.html>expend.html>")) {
+    if (pathHistory.includes(">none.html")) {
+      selected = "B";
+    } else {
+      selected = "A";
+    }
+  } else if (pathHistory && pathHistory.includes("no.html>expend.html>")) {
+    selected = "C";
+  }
+
+  if (selected) {
+    document.getElementById("professor-img").src = professorMap[selected].img;
+    document.getElementById("professor-name").textContent = professorMap[selected].name;
+    document.getElementById("professor-text").textContent = professorMap[selected].text;
+  }
+</script>

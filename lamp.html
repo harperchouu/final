@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>總花費</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding-bottom: 60px;
+      background-color: white;
+    }
+    .cost-label {
+      font-size: 15px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    .cost-display {
+      font-size: 19px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .button-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .header-image {
+      width: 375px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .image-description {
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 537px;
+      color: #000;
+    }
+    .continue-button {
+        background: #ffdeea;
+        background: radial-gradient(circle, rgba(255, 222, 234, 1) 100%, rgba(148, 187, 233, 1) 100%);;
+      padding: 12px 30px;
+      font-size: 16px;
+
+   
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .continue-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentPath = sessionStorage.getItem("pathHistory") || "";
+      sessionStorage.setItem("pathHistory", currentPath + ">lamp.html");
+
+      const params = new URLSearchParams(window.location.search);
+      const total = params.get('total');
+      const totalDisplay = document.getElementById('total-cost-display');
+      if (total) {
+        totalDisplay.innerText = `💰您的總花費： ${total} 元`;
+      } else {
+        totalDisplay.innerText = '💰您的總花費： 0 元';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="image-container">
+    <img src="/Users/yuanhsichou/Desktop/project/手燈發光（去背）.png" alt="粉絲合照" class="header-image">
+    <div class="image-description">大部分韓國偶像團體皆會推出有特定造型、顏色與象徵的官方應援手燈，供粉絲表明自己的粉籍，並在演唱會或活動中使用。<br>手燈通常會支援中央控制指令（中控，全場只有單一顏色），或多點控制指令（點控，個別座位呈現不同顏色，可以構成圖案、文字）模式，只要在表演場地中開啟手燈，顏色及閃耀效果就會由燈光師統一控制。<br>出道時間較長的團體甚至每隔一段時間便推出新款手燈。</div>
+  </div><br><br>
+
+  <div class="cost-display" id="total-cost-display">💰：元</div>
+
+  <div class="button-container">
+    <a href="fans.html" class="continue-button">看看是誰也在當盤子！</a>
+  </div>
+</body>
+</html>

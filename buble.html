@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>總花費</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: white;
+    }
+    .cost-label {
+      font-size: 19px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    .cost-display {
+      font-size: 19px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .button-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 13px;
+    }
+
+    .header-image {
+      width: 375px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .image-description {
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 520px;
+      color: #000;
+    }
+    .continue-button {
+        background: #ffdeea;
+        background: radial-gradient(circle, rgba(255, 222, 234, 1) 100%, rgba(148, 187, 233, 1) 100%);;
+      padding: 12px 30px;
+      font-size: 16px;
+
+   
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .continue-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="image-container">
+    <img src="/Users/yuanhsichou/Desktop/project/泡泡app（立體版）.png" alt="粉絲合照" class="header-image">
+    <div class="image-description">泡泡為一款付費私訊軟體，每月訂閱價格落在台幣100～150元之間。<br>偶像會以「像聊天一樣」的形式傳送訊息給粉絲，雖然是群發但形式上營造一對一，粉絲也可以在偶像傳送訊息時回覆。<br>若要長期與偶像聊天，便要每個月持續訂閱。</div>
+  </div><br><br>
+
+  <div class="cost-display" id="total-cost-display">💰：元</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentPath = sessionStorage.getItem("pathHistory") || "";
+      sessionStorage.setItem("pathHistory", currentPath + ">buble.html");
+
+      const params = new URLSearchParams(window.location.search);
+      const total = params.get('total');
+      const costDisplay = document.getElementById('total-cost-display');
+      if (total) {
+        costDisplay.innerText = `💰您的總花費： ${total} 元`;
+      } else {
+        costDisplay.innerText = '💰您的總花費： 0 元';
+      }
+    });
+  </script>
+
+  <div class="button-container">
+    <a href="fans.html" class="continue-button">看看是誰也在當盤子！</a>
+  </div>
+</body>
+</html>

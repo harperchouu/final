@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>準備頁面</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: "Noto Sans TC", sans-serif;          
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 0 20px;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px 30px;
+
+      max-width: 600px;
+      animation: dropIn 0.8s ease-out;
+    }
+
+    .content p, .content ul, .content li {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #333;
+      text-align: center;
+    }
+
+    .content ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .content li {
+      margin: 10px 0;
+    }
+
+    .content button {
+      width: 120px;
+      height: 50px;
+      background: #ffdeea;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 19px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      margin: 20px auto 0;
+      border: none;
+    }
+
+    .content button:hover,
+    .content button:active {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .content input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 10px;
+      border-radius: none;
+    }
+
+    @keyframes dropIn {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="/Users/yuanhsichou/Desktop/project/Untitled design (2).jpg" alt="logo" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: -1;">
+  <div class="wrapper">
+    <div class="content">
+      <p>您現在正在搶超熱門演唱會 《gummii》 的門票，並且需要在 10秒 內搶完，不然你的票就要搶光了！</p>
+      <p style="text-align:center;">為了提高搶到票的機率，請確認是否完成以下事項</p>
+      <ul>
+        <li><label><input type="checkbox"> 拜拜！</label></li>
+        <li><label><input type="checkbox"> 改了IP</label></li>
+        <li><label><input type="checkbox"> 測網速</label></li>
+      </ul>
+      <a href="index.html" style="text-decoration: none; color: black;">
+        <button>開始搶票</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

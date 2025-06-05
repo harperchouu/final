@@ -1,0 +1,92 @@
+<!-- 捲動式影片：bubble -->
+<style></style>
+<div id="dlmbp">
+  <div id="money-indicator" style="position: fixed; top: 20px; right: 20px; z-index: 10000; font-size: 20px;">
+    💰金錢花費：0元
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 記錄開始路徑
+      sessionStorage.setItem("pathHistory", "yes.html");
+
+      const baseAmount = 22000;
+      const options = {
+        'card.html': 400,
+        'buble.html': 120,
+        'lamp.html': 1600,
+        'poster.html': 500,
+        'sign.html': 10000,
+        'none.html': 0
+      };
+
+      document.querySelectorAll('a.option').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault(); // 阻止立即跳轉
+
+          const href = this.getAttribute('href');
+          const extra = options[href] || 0;
+          const total = baseAmount + extra;
+
+          localStorage.setItem('totalCost', total);
+
+          // 稍作延遲以確保資料寫入後再跳轉
+          setTimeout(() => {
+            window.location.href = href;
+          }, 100);
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new MutationObserver(() => {
+        const videoWrapper = document.querySelector("video");
+        if (videoWrapper) {
+          observer.disconnect();
+          videoWrapper.addEventListener("timeupdate", () => {
+            if (videoWrapper.currentTime >= 6) {
+              const moneyTag = document.querySelector('#money-indicator');
+              if (moneyTag) {
+                moneyTag.textContent = "💰金錢花費：22000元";
+              }
+            }
+          });
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+  <script>
+    (function() {
+      var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.13';
+      var pkg = 'scrollable-video';
+      if (typeof window != 'undefined') {
+        if (!window.hasOwnProperty(namespace)) {
+          window[namespace] = {};
+        }
+        if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+          window[namespace][pkg] = [];
+        }
+        if (Array.isArray(window[namespace][pkg])) {
+          var data = {"video":{"src":"https://harperchouu.github.io/vediodemo/mmo.mov","mobileSrc":"","duration":19.441333},"captions":[{"id":"facgg","width":"narrow","alignment":"left","startTime":7.01,"rawContentState":{"blocks":[{"key":"877fc","data":{},"text":"這時，你收到了一則偶像Angela傳送的泡泡訊息，看看他傳了什麼吧～","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}],"entityMap":{}}},{"id":"nbbgd","width":"narrow","alignment":"right","startTime":10.46,"rawContentState":{"blocks":[{"key":"b7bj8","data":{},"text":"這是粉絲們必備的通訊軟體－泡泡，偶像會以「像聊天一樣」的形式傳訊息給有訂閱的粉絲，雖然是群發但形式上營造一對一，粉絲也可以在偶像傳訊息時回覆","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}],"entityMap":{}}},{"id":"mgocm","width":"narrow","alignment":"right","startTime":13.67,"rawContentState":{"blocks":[{"key":"626oj","data":{},"text":"泡泡程式中，一位成員每個月訂閱費用約在100至150元之間，如果想同時訂閱一個團體中的多位成員，價格會累加，但程式也會推出優惠套餐，訂閱越多成員越划算","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}],"entityMap":{}}},{"id":"dmgdl","width":"narrow","alignment":"right","startTime":15.17,"rawContentState":{"blocks":[{"key":"2tous","data":{},"text":"當偶像讀了粉絲訊息，或發下一則訊息時，粉絲訊息旁邊的「1」會消失","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}],"entityMap":{}}},{"id":"gqbok","width":"narrow","alignment":"right","startTime":18.33,"rawContentState":{"blocks":[{"key":"ceh4e","data":{},"text":"在這裡粉絲可以盡情分享心情、傾吐愛意，也能常常收到偶像的日常報備訊息，拉近粉絲與偶像之間的距離","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}],"entityMap":{}}}],"darkMode":false,"secondsPer100vh":1.5,"uuid":"5f46d63e-a63e-4807-a42a-25152549be22"};
+          window[namespace][pkg].push(data);
+        }
+      }
+    })()
+  </script>
+  <div id="5f46d63e-a63e-4807-a42a-25152549be22"></div>
+  <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.13/dist/scrollable-video.js"></script>
+  <script>
+    let scrollTimeout;
+    window.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const threshold = document.body.scrollHeight - 10;
+      if (scrollPosition >= threshold) {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          window.location.href = 'expend.html?source=yes';
+        }, 200); // 停留 5 秒後跳轉
+      }
+    });
+  </script>
+</div>
