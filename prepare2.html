@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>準備頁面</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Noto Sans TC", sans-serif;          
+      background-color: #ffffff;
+    }
+    .center-text {
+      margin-top: auto;
+      text-align: center;
+      font-size: 20px;
+      line-height: 2em;
+      color: #333;
+    }
+    .center-text input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+
+    .center-text label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .loading {
+      position: absolute;
+      top: 75%;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      color: #ff7ea8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <img src="/Users/yuanhsichou/Desktop/project/Untitled design (2).jpg" alt="logo" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: -1;">
+  <div class="loading"><span style="font-weight: bold;">LOADING</span><span id="dots">...</span></div>
+</body>
+<script>
+  setTimeout(() => {
+    window.location.href = 'prepare.html';
+  }, 5000);
+
+  let dotElement = document.getElementById("dots");
+  let dotCount = 3;
+  setInterval(() => {
+    dotCount = (dotCount % 5) + 3;
+    dotElement.textContent = '.'.repeat(dotCount);
+  }, 400);
+</script>
+</html>
