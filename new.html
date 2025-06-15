@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>粉絲故事頁面</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: 1.8;
+      color: #222;
+    }
+    .section {
+      padding: 35px 20px;
+    }
+    .section1 { background: #f4c8a3; }
+    .section2 { background: #fbd9bd; }
+    .section3 { background: #f5c88d; height:250px }
+    .section4 { background: #fdd2cb; }
+    .section5 { background: #fde2c7; }
+    .person {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+    .person img {
+      width: 180px;
+      margin-bottom: 10px;
+    }
+    .person .text {
+      flex: 1;
+      min-width: 300px;
+      padding: 10px;
+    }
+    .quote {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
+    .quote img {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    #lightbox {
+      text-align: center;
+      margin-top: 40px;
+    }
+    #lightbox img {
+      max-width: 90%;
+      height: auto;
+    }
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-modal img {
+      margin: auto;
+      display: block;
+      max-width: 80vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .lightbox-prev {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+
+    .slide-in-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    /* 粉紅色背景與動態動畫效果的按鈕樣式 */
+    #fanButton {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ffdbee;
+      color: black;
+      border: none;
+
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #fanButton:hover,
+    #fanButton:active {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section section1">
+    <div class="person">
+      <div class="text">
+        <p><strong>Abby（化名）</strong></p>
+        <p>從首爾回美國待不到兩天又飛首爾，連續兩次。一年飛了七十多個航班，雖然很累，但見到我喜歡的偶像就感到很幸福，他知道我為了追他很累，所以（偶像）也會加倍關心我。</p>
+        <p>這樣做是因為我想跟喜歡的人見面，喜歡看他在舞台上閃閃發光的樣子，想跟他說話，每次（見到面）都很幸福，他沒有讓我失望過。</p>
+      </div>
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲1.png" alt="Abby">
+    </div>
+  </div>
+
+  <div class="section section2">
+    <div class="person">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲5.png" alt="Jennie">
+      <div class="text">
+        <p><strong>Jennie（化名）</strong></p>
+        <p>目前來看，最瘋狂大概是飛去美國陪他們巡吧，之後搞不好會有更瘋狂的，我也不知道。當時只是因為我大概跟他們有分離焦慮症，我想到可能連續三個月看不到我擔，我就覺得我快要窒息了，每天都非常焦躁，為了解決這個不安，就決定去了。去完回來就好非常多。回頭看的話，會覺得雖然蠻瘋的，但整個過程我大概會記得一輩子，是人生裡面很好的一段歷程吧，在最好的時間、最好的地方，發生了最好的事，然後成為了美好的回憶。</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="section section3">
+    <div class="person">
+      <div class="text">
+        <p><strong>Aerin（化名）</strong></p>
+        <p>我在近期的回歸上花了近新台幣200萬元，其中與偶像的單獨合照花到13萬元，兩次回歸花了近400萬元。我對卡沒什麼興趣，我只對他們人有興趣 我喜歡能1對1的場，目前參加簽售會的次數已經多到跟偶像如朋友般自然。</p>
+      </div>
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲3.png" alt="Aerin">
+    </div>
+  </div>
+
+  <div class="section section4">
+    <div class="person">
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲4.png" alt="Sun">
+      <div class="text">
+        <p><strong>Sun（化名）</strong></p>
+        <p>剛開始他還是一名需要粉絲的練習生，而我給了他所需要的支持、他給予我對生活的滿滿動力。透過他的眼裡，我看見了豐富多采的世界，看見他次次逆境中開出燦爛的花，如果他幸福的話我會比他先流淚，這樣愛一個人的情緒我想只有追星可以帶給我。</p>
+        <p>因為自己追的是練習生而有銷量壓力買很多，每次都會盡自己最大的努力購買，但從下單到真正拿到商品，需要經歷近四個月的等待，而真正感到開心的，只有拆開包裹的那一刻，但也因為一直都有控制在自己能力範圍，所以說買了也不會後悔，就是有時候會因為一堆周邊佔空間而感到苦惱。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section5" style="will-change: transform, opacity;">
+    <div class="person">
+      <div class="text">
+        <p><strong>邱比（化名）</strong></p>
+        <p>老實說我當時也不太敢細算自己到底花了多少錢，因為應該會蠻驚人的。但那段時間很常滑臉書社團，每天放學拿到手機後，第一個打開的不是 IG，而是社團，少則滑一兩小時，多的時候甚至會滑三個小時，一直在看卡價、刷貼文、跟單、找代購。那段時間其實是精神跟金錢的雙重消耗，但當時真的就是一股腦地想要「集齊全套」和「想要漂亮的小卡」的執念在支撐。現在回頭看會覺得那種心態真的太瘋，但也算是一段特別的經歷。</p>
+      </div>
+      <img src="/Users/yuanhsichou/Desktop/project/粉絲2.png" alt="邱比">
+    </div>
+  </div>
+
+  <div class="quote">
+
+    <br><br><p>當代偶像產業的商業模式不再單純依賴音樂作品本身，而是結合許多精密設計的消費機制，將粉絲的愛「商品化」。從專輯附贈的隨機款式小卡、特典與簽售抽選，到私訊應用程式「泡泡」等，皆為娛樂公司經過層層設計創造出的情感交換關係——購買越多，參與越深，與偶像間的關係就更加緊密。這些機制為偶像產業製造稀缺性與不確定性。然而，只要有足夠的金錢就能突破門檻，這樣的稀缺性對多數人而言是限制，卻同時為少數人打開以金錢換取「被看見」機會的捷徑。粉絲購買的不僅是作品本身，更是展現投入程度的象徵性資本。</p>
+    
+    <div style="float: right; margin: 10px 0 20px 20px; width: 480px;">
+        <div style="position: relative; width: 100%;">
+          <img src="/Users/yuanhsichou/Desktop/project/DSC04630.JPG" alt="粉絲與手舉紙板" class="wide-image" style="cursor: pointer;" onclick="openLightbox(0)" />
+          <div style="position: absolute; bottom: 15px; left: 8px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 7px; font-size: 14px; border-radius: 4px;">
+            點擊看更多
+          </div>
+        </div>
+        <div class="wide-image" style="font-size: 14px; color: #666; margin-top: 5px; text-align: justify;">隨著偶像產業的蓬勃發展，公司也開始銷售不同偶像周邊商品像是手燈、娃娃與小卡，其中有網路通路，也有一般實體門市，提供給不同需求的粉絲們。　 圖／張博媛、王保伶攝
+        </div>
+        
+    </div>
+    
+    <p>代購Kpop.fashion.tw說明，過去粉絲會購買偶像推出的一般專輯，有些人甚至會一次性蒐集官方發行的所有版本。然而如今，除了專輯內固定附贈的小卡外，還出現來自不同通路的特典小卡，導致大量購買特典專輯的風潮日益明顯。「因為小卡是官方隨機給，他（粉絲）可能會為了拿到比較想要的款式，一次買個十本、二十本，甚至有可能買到一百本，就是為了那張特典小卡。」Kpop.fashion.tw補充道。此外，Kpop.fashion.tw也提及，有些粉絲願意花費新台幣四、五萬元購買簽售專輯，為的是增加中籤機率，以獲得跟偶像面對面交談的機會。</p>
+    <p>「因為愛是很虛無的，要怎麼展現你真的很愛他呢？一部分是透過掌握具體的物質，就是你可以展現給別人看的東西。」國立政治大學新聞系教授王淑美說道。除了購買商品支持偶像外，另一項要價不菲的追星途徑為「追線下」——即粉絲親自參與線下活動。王淑美表示，歌曲、影像皆可以複製，但實體演出卻無法複製，粉絲能實際見到偶像的時間極其有限，娛樂公司正是利用這點，透過見面會、演唱會，製造出獨一無二的時刻，吸引粉絲投入大筆金額，只為爭取來自偶像的稀缺注意。</p>
+    <p>正在研究粉絲與偶像親密關係的政大傳播碩士學位學程三年級學生王孟肜解釋，現今的消費模式反映出一種娛樂公司將偶像作為情感商品，並大量被販賣的現象。粉絲透過消費獲得「類戀愛」的情感體驗，讓投入金錢成為他們換取情感的一種方式，「粉絲經常會說：『我之所以花錢，都是因為我愛你們啊。』」王孟肜笑著說道。</p>
+    <p>「娛樂公司在宣傳偶像時，也會為粉絲跟偶像的連結下定義，如果你（粉絲）愛我（偶像），你就要做什麼事情，會變成這個粉絲社群的潛規則。」王淑美也指出，由於粉絲都聚集在一起，社群凝視的力量強大，迫使粉絲在不知不覺中去滿足娛樂公司的消費要求。政大新聞系副教授柯裕棻補充，社群媒體也容易讓粉絲之間的比較與炫耀被放大，「比如一場演唱會的參與者大概幾萬人，可是一旦放到網路上不斷傳播，馬上就被全世界的粉絲看到了，最後就會變成一個很大的（事件）。」正因如此，在這樣的情感消費模式下，粉絲們有時也會感到負擔與壓力。</p>
+   
+  
+    
+
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightboxImage" src="">
+    <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+  </div>
+
+  <script>
+    const imagePaths = [
+      "/Users/yuanhsichou/Desktop/project/DSC04630.JPG",
+      "/Users/yuanhsichou/Desktop/project/IMG_0923.JPG",
+      "/Users/yuanhsichou/Desktop/project/IMG_0953 (2).JPG"
+    ];
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById("lightboxImage").src = imagePaths[currentIndex];
+      document.getElementById("lightboxModal").style.display = "block";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightboxModal").style.display = "none";
+    }
+
+    function changeImage(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = imagePaths.length - 1;
+      } else if (currentIndex >= imagePaths.length) {
+        currentIndex = 0;
+      }
+      document.getElementById("lightboxImage").src = imagePaths[currentIndex];
+    }
+  </script>
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    sections.forEach((section, index) => {
+      const directionClass = index % 2 === 0 ? 'slide-in-right' : 'slide-in-left';
+      section.classList.add(directionClass);
+    });
+
+    function revealOnScroll() {
+      const revealPoint = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < revealPoint) {
+          section.classList.add('slide-in-visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</div>
+  <div style="text-align: center; margin: 60px 0;">
+    <a href="pro.html" id="fanButton">看看你是哪一種粉絲？</a>
+  </div>
+</body>
+</html>
