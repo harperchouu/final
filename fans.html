@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>粉絲故事</title>
   <style>
+  .wide-image {
+    position: relative;
+    left: 0;
+    width: 120%;
+    max-width: none;
+  }
   .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -84,6 +90,53 @@
     }
   </style>
   <style>
+  @media screen and (max-width: 768px) {
+    .story-block {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .avatar {
+      width: 100%;
+    }
+
+    .avatar img {
+      width: 140px;
+    }
+
+    .speech-bubble {
+      max-width: 100%;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    .nytmm_photo {
+      flex-direction: column;
+    }
+
+    .wide-image {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .lightbox-overlay img {
+      max-width: 95%;
+      max-height: 80%;
+    }
+
+    body {
+      padding: 20px 10px;
+    }
+
+    .pink-button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  </style>
+  <style>
     .article-button-container {
       text-align: center;
       margin-top: 40px;
@@ -161,7 +214,7 @@
       <img src="https://github.com/harperchouu/final/blob/main/%E7%B2%89%E7%B5%B25.png?raw=true" alt="Aerin">
       <p>Aerin（化名）</p>
     </div>
-    <div class="speech-bubble" style="margin-top: -80px;">
+    <div class="speech-bubble" style="margin-top: -60px;">
         我在近期的回歸上花了近新台幣200萬元，其中與偶像的單獨合照花到13萬元，兩次回歸花了近400萬元。我對卡沒什麼興趣，我只對他們人有興趣 我喜歡能1對1的場，目前參加簽售會的次數已經多到跟偶像如朋友般自然。
     </div>
   </div>
@@ -198,6 +251,8 @@
       color: #111;
       background-color: #fff;
     }
+
+
     h1 {
       font-size: 24px;
       font-weight: bold;
@@ -221,10 +276,12 @@
 
   <div style="float: right; margin: 10px 0 20px 20px; width: 480px;">
     <div style="position: relative; width: 100%;">
-      <img src="https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true" alt="粉絲與手舉紙板" style="width: 100%; height: auto; cursor: pointer;" onclick="openLightbox(0)" />
+      <img src="https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true" alt="粉絲與手舉紙板" class="wide-image" style="height: auto; cursor: pointer;" onclick="openLightbox(0)" />
       <div style="position: absolute; bottom: 15px; left: 8px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 7px; font-size: 14px; border-radius: 4px;">
         點擊看更多
       </div>
+    </div>
+    <div class="wide-image" style="font-size: 14px; color: #666; margin-top: 5px; text-align: justify;">隨著偶像產業的蓬勃發展，公司也開始銷售不同偶像周邊商品像是手燈、娃娃與小卡，其中有網路通路，也有一般實體門市，提供給不同需求的粉絲們。　 圖／王保伶攝
     </div>
   </div>
 
@@ -244,7 +301,7 @@
 
   <script>
     const imageList = [
-      "https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true",
+     "https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true",
       "https://github.com/harperchouu/final/blob/main/IMG_0923.JPG?raw=true",
       "https://github.com/harperchouu/final/blob/main/IMG_0953%20(2).JPG?raw=true"
     ];
