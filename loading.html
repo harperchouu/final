@@ -90,6 +90,41 @@
     #loading {
       display: flex;
     }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .top-bar > div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .section {
+        padding: 0 10px;
+        text-align: center;
+      }
+
+      .notice-text {
+        font-size: 18px;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -112,7 +147,7 @@
   <div id="scalper" class="section">
     <div class="notice-text">
       《gummii：chew the moment》巡迴演唱會-台北場<br />
-      您選擇的區域已售完
+      您選擇的區域已完售
     </div>
     <div class="btn-group">
       <button class="btn" onclick="goToData()">我知道了</button>
