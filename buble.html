@@ -66,12 +66,49 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+        height: auto;
+      }
+
+      .header-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .image-description {
+        font-size: 16px;
+        padding: 0 10px;
+        line-height: 1.5;
+      }
+
+      .cost-display {
+        font-size: 17px;
+        padding: 0 10px;
+      }
+
+      .continue-button {
+        width: 90%;
+        font-size: 16px;
+        padding: 12px;
+        margin: 20px auto 0;
+        display: block;
+      }
+
+      .button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
   </style>
   
 </head>
 <body>
   <div class="image-container">
-    <img src="https://github.com/harperchouu/final/blob/main/%E6%B3%A1%E6%B3%A1app%EF%BC%88%E7%AB%8B%E9%AB%94%E7%89%88%EF%BC%89.png?raw=true" alt="粉絲合照" class="header-image">
+    <img src="/Users/yuanhsichou/Desktop/project/泡泡app（立體版）.png" alt="粉絲合照" class="header-image">
     <div class="image-description">泡泡為一款付費私訊軟體，每月訂閱價格落在台幣100～150元之間。<br>偶像會以「像聊天一樣」的形式傳送訊息給粉絲，雖然是群發但形式上營造一對一，粉絲也可以在偶像傳送訊息時回覆。<br>若要長期與偶像聊天，便要每個月持續訂閱。</div>
   </div><br><br>
 
@@ -94,7 +131,7 @@
   </script>
 
   <div class="button-container">
-    <a href="new.html" class="continue-button">看看其他粉絲的故事！</a>
+    <a href="new.html" class="continue-button">看看是誰也在當盤子！</a>
   </div>
 </body>
 </html>
