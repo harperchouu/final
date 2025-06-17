@@ -75,9 +75,10 @@
     .image-description {
       font-size: 15px;
       padding: 0 10px;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
+    .cost-label,
     .cost-display {
       font-size: 17px;
       padding: 0 10px;
@@ -88,7 +89,7 @@
       font-size: 16px;
       padding: 12px;
       display: block;
-      margin: 0 auto;
+      margin: 20px auto 0;
     }
 
     .button-container {
@@ -98,8 +99,7 @@
       padding: 0 10px;
     }
 
-    .cost-label {
-      font-size: 14px;
+    .image-container {
       padding: 0 10px;
     }
   }
@@ -107,7 +107,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const currentPath = sessionStorage.getItem("pathHistory") || "";
-    sessionStorage.setItem("pathHistory", currentPath + ">poster.html");
+    sessionStorage.setItem("pathHistory", currentPath + ">sign.html");
 
     const params = new URLSearchParams(window.location.search);
     const total = params.get('total');
@@ -123,8 +123,8 @@
 <body>
   <div class="image-container">
     <img src="https://github.com/harperchouu/final/blob/main/%E6%89%8B%E5%B9%85.png?raw=true" alt="粉絲合照" class="header-image">
-    <div class="image-description">大部分為毛巾大小的長方形，有布或紙等材質，一面是偶像照片，另一面是偶像或團體名字，粉絲可以在活動時舉起應援，如果手幅樣式很特別，也可能吸引偶像注意。<br>許多粉絲也會用來裝飾房間，或外出時披、綁在身上。</div>
-  </div><br><br>
+    <div class="image-description">偶像親自簽名的專輯。</div>
+  </div><br><br><br>
 
   <div class="cost-display" id="total-cost-display">💰：元</div>
 
