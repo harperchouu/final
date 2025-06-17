@@ -122,6 +122,51 @@
       color: red;
       margin-top: 5px;
     }
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .top-bar > div {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .container {
+        padding: 20px 10px;
+      }
+      .ticket-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .ticket-header img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .ticket-row,
+      .ticket-data {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+      }
+      .verify {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .verify img {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+      .verify input {
+        margin-left: 0;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -173,7 +218,7 @@
     </div>
 
     <div class="ticket-header">
-      <img src="https://github.com/harperchouu/final/blob/main/image2.png?raw=true" alt="poster" />
+      <img src="2151786503.webp" alt="poster" />
       <div>
         <div style="font-size: 18px; font-weight: bold;">《gummii：chew the moment》巡迴演唱會-台北場</div>
         <div style="margin-top: 5px;">📅 2025/6/16（六）19:30　📍 台北巨蛋 T-Arena</div>
@@ -200,7 +245,7 @@
         <div></div>
       </div>
       <div class="verify">
-        <img src="https://github.com/harperchouu/final/blob/main/gaee.png?raw=true" alt="驗證碼" />
+        <img src="/Users/yuanhsichou/Desktop/project/gaee.png" alt="驗證碼" />
         <input type="text" placeholder="請輸入驗證碼" style="flex:4; padding: 7px; margin-left: 30px;" />
       </div>
       <div class="note">
