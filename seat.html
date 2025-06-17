@@ -56,6 +56,61 @@
       filter: brightness(1.2);
       color: gray;
     }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .content {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left, .right {
+        flex: unset;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .left img, .right img {
+        width: 100%;
+        height: auto;
+        max-height: unset;
+      }
+
+      .right {
+        max-height: none;
+      }
+
+      .top-bar > div {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .top-bar > div > div {
+        margin-right: 10px;
+      }
+
+      .top-bar + div {
+        padding: 20px 10px 10px 10px !important;
+      }
+
+      .top-bar + div > div {
+        margin-left: 0 !important;
+      }
+
+      .top-bar + div > div > div {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .top-bar + div > div > div > div {
+        margin: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -106,7 +161,7 @@
   </div>
   <div class="content">
     <div class="left">
-      <img src="https://github.com/harperchouu/final/blob/main/gummii2.png?raw=true" alt="Concert Poster" />
+      <img src="/Users/yuanhsichou/Desktop/project/gummii.png" alt="Concert Poster" />
     </div>
     <div class="right">
       <div style="font-weight: bold; font-size: 16px;">請選擇選位方式</div>
