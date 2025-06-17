@@ -1,9 +1,54 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <title>教授結果</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #professor-section {
+      padding: 20px;
+    }
+
+    #professor-img {
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    #professor-name,
+    #professor-text {
+      padding: 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card-link {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-link img {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 10px 0;
+      }
+
+      .card-link div {
+        width: 100%;
+      }
+
+      #professor-text {
+        font-size: 16px;
+      }
+
+      #professor-name {
+        font-size: 18px;
+      }
+    }
     .card-link {
       display: flex;
       align-items: center;
@@ -24,19 +69,19 @@
 
 <body style="overflow-y: auto;">
 
-<div id="professor-section" style="text-align: center; margin-top: 50px;">
-  <img id="professor-img" src="" alt="Professor" style="max-width: 300px;">
-  <p id="professor-name" style="font-size: 20px; font-weight: bold; margin-top: 10px;"></p>
+<div id="professor-section">
+  <img id="professor-img" src="" alt="Professor" style="max-width: 300px; display: block; margin: 0 auto;">
+  <p id="professor-name" style="font-size: 20px; font-weight: bold; margin-top: 10px; text-align: center;"></p>
   <p id="professor-text" style="font-size: 18px; max-width: 500px; margin: 20px auto; line-height: 1.6;"></p>
   <div style="margin-top: 100px; margin-bottom: 100px; max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="https://unews.nccu.edu.tw/unews/idol-fans-consume/" class="card-link">
-      <img src="https://github.com/harperchouu/final/blob/main/IMG_0923.JPG?raw=true" alt="當追星成為金錢的軟量" style="width: 80px; height: auto; margin-right: 15px;">
+      <img src="https://github.com/harperchouu/final/blob/main/IMG_0923.JPG?raw=true" alt="當追星成為金錢的軟量" style="width: 80px; height: auto; margin-right: 15px; flex-shrink: 0;">
       <div>
-        <div style="font-weight: bold; font-size: 20px;">當追星成為金錢的較量　偶像產業如何驅動消費</div>
+        <div style="font-weight: bold; font-size: 20px;">當追星成為金錢的軟量　偶像產業如何驅動消費</div>
       </div>
     </a>
     <a href="https://unews.nccu.edu.tw/unews/ticket-scalping-need/" class="card-link">
-      <img src="https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true" alt="誰搶走了門票？" style="width: 80px; height: auto; margin-right: 15px;">
+      <img src="https://github.com/harperchouu/final/blob/main/DSC04630.JPG?raw=true" alt="誰搶走了門票？" style="width: 80px; height: auto; margin-right: 15px; flex-shrink: 0;">
       <div>
         <div style="font-weight: bold; font-size: 20px;">誰搶走了門票？　黃牛和粉絲間的共生與拉扯</div>
       </div>
