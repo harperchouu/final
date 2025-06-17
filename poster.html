@@ -66,6 +66,43 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
+  @media (max-width: 768px) {
+    .header-image {
+      width: 90%;
+      height: auto;
+    }
+
+    .image-description {
+      font-size: 15px;
+      padding: 0 10px;
+      line-height: 1.6;
+    }
+
+    .cost-display {
+      font-size: 17px;
+      padding: 0 10px;
+    }
+
+    .continue-button {
+      width: 90%;
+      font-size: 16px;
+      padding: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 10px;
+    }
+
+    .cost-label {
+      font-size: 14px;
+      padding: 0 10px;
+    }
+  }
   </style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -92,7 +129,7 @@
   <div class="cost-display" id="total-cost-display">💰：元</div>
 
   <div class="button-container">
-    <a href="new.html" class="continue-button">看看其他粉絲的故事！</a>
+    <a href="new.html" class="continue-button">看看是誰也在當盤子！</a>
   </div>
 </body>
 </html>
