@@ -4,13 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>準備頁面</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      background-color: #ffdef2;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      font-family: "Noto Sans TC", sans-serif;          
-      background-color: #ffffff;
-      overflow-x: hidden;
+    }
+
+    .gummii-text {
+      font-family: 'Caprasimo', serif;
+      font-style: italic;
+      font-size: 200px;
+      letter-spacing: 2px;
+      color: #7b3750;
+      text-shadow:
+        0.03em 0.03em 0.05em rgba(0,0,0, .2),
+        0.01em 0.01em 0 #7b1e50,
+        0.02em 0.02em 0 #f980c1,
+        0.03em 0.03em 0 #f980c1,
+        0.03em 0.04em 0 #f980c1,
+        0.05em 0.05em 0 #f980c1,
+        0.05em 0.06em 0 #f980c1,
+        0.05em 0.07em 0 #f980c1;
+      margin-bottom: 60px;
+      transform: scaleY(1.3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 250px;
+      z-index: 0;
+    }
+
+    .loading-text {
+      color: rgb(131, 54, 95);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 0 #6f424f;
+      margin-bottom: 20px;
     }
     .wrapper {
       display: flex;
@@ -18,14 +55,18 @@
       align-items: center;
       height: 100vh;
       padding: 0 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .content {
       background-color: rgba(255, 255, 255, 0.85);
       padding: 40px 30px;
-
       max-width: 600px;
       animation: dropIn 0.8s ease-out;
+      position: relative;
+      z-index: 2;
+      font-family: system-ui, sans-serif;
     }
 
     .content p, .content ul, .content li {
@@ -111,11 +152,31 @@
       .content input[type="checkbox"] {
         transform: scale(1.2);
       }
+      .gummii-text {
+        font-size: 120px;
+      }
+
+      .content p,
+      .content ul,
+      .content li {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 480px) {
+      .gummii-text {
+        font-size: 80px;
+      }
+
+      .content p,
+      .content ul,
+      .content li {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="https://github.com/harperchouu/final/blob/main/Untitled%20design%20(2).jpg?raw=true" alt="logo" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: -1;">
+  <div class="gummii-text">gummii</div>
   <div class="wrapper">
     <div class="content">
       <p>您現在正在搶超熱門演唱會 《gummii》 的門票，並且需要在 10秒 內搶完，不然你的票就要搶光了！</p>
@@ -132,3 +193,4 @@
   </div>
 </body>
 </html>
+
