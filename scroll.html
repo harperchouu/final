@@ -32,7 +32,17 @@
   <div style="position: fixed; top: 20px; right: 20px; z-index: 10000; font-size: 20px;">
     💰金錢花費：0元
   </div>
-  <!-- 捲動式影片：news --><style></style><div id="hfdag">
+  <!-- 捲動式影片：news -->
+  <style>
+    #hfdag .scrollable-video .section {
+      background-color: rgba(0, 0, 0, 0.7) !important;
+      color: white !important;
+    }
+    #hfdag .scrollable-video .section * {
+      color: white !important;
+    }
+  </style>
+  <style></style><div id="hfdag">
     
     <script>
       (function() {
@@ -58,7 +68,7 @@
   <!-- 彈出視窗 -->
   <div id="popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:9999;">
     <div style="background:#fff; padding:2rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); text-align:center;">
-      <p>看到這個比原價高二倍的價格，您還想購買黃牛票卷嗎？</p>
+      <p>看到這個比原價高三倍的價格，您還想購買黃牛票卷嗎？</p>
       <button onclick="handleAnswer(true)">是</button>
       <button onclick="handleAnswer(false)">否</button>
     </div>
