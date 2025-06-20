@@ -1,5 +1,17 @@
 <!-- 捲動式影片：bubble -->
-<style></style>
+<style>
+  @media screen and (max-width: 600px) {
+    #money-indicator {
+      top: 20px !important;
+      bottom: auto !important;
+      right: 20px !important;
+      left: auto !important;
+      font-size: 20px !important;
+      padding: 4px 10px;
+      z-index: 10000;
+    }
+  }
+</style>
 <div id="dlmbp">
   <div id="money-indicator" style="position: fixed; top: 20px; right: 20px; z-index: 10000; font-size: 20px;">
     💰金錢花費：0元
@@ -63,21 +75,6 @@
     }
     #befhb .scrollable-video .section * {
       color: white !important;
-    }
-    @media screen and (max-width: 600px) {
-      #befhb .scrollable-video .section {
-        font-size: 18px !important;
-        line-height: 1.8 !important;
-      }
-
-      #befhb .scrollable-video .section .public-DraftEditor-content {
-        font-size: 18px !important;
-        line-height: 1.8 !important;
-      }
-
-      #befhb .scrollable-video .section * {
-        font-size: 18px !important;
-      }
     }
   </style><div id="befhb">
       
