@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>你是ＸＸ型粉絲</title>
+  <title></title>
   <style>
     body {
       margin: 0;
@@ -77,7 +77,7 @@
     <a href="https://unews.nccu.edu.tw/unews/idol-fans-consume/" class="card-link">
       <img src="https://github.com/harperchouu/final/blob/main/IMG_0923.JPG?raw=true" alt="當追星成為金錢的軟量" style="width: 80px; height: auto; margin-right: 15px; flex-shrink: 0;">
       <div>
-        <div style="font-weight: bold; font-size: 20px;">當追星成為金錢的較量　偶像產業如何驅動消費</div>
+        <div style="font-weight: bold; font-size: 20px;">當追星成為金錢的軟量　偶像產業如何驅動消費</div>
       </div>
     </a>
     <a href="https://unews.nccu.edu.tw/unews/ticket-scalping-need/" class="card-link">
@@ -127,6 +127,14 @@
     document.getElementById("professor-img").src = professorMap[selected].img;
     document.getElementById("professor-name").textContent = professorMap[selected].name;
     document.getElementById("professor-text").textContent = professorMap[selected].text;
+    const titleMap = {
+      "A": "你是付出型粉絲",
+      "B": "你是理智型粉絲",
+      "C": "你是節制型粉絲"
+    };
+    if (titleMap[selected]) {
+      document.title = titleMap[selected];
+    }
   }
 </script>
 </body></html>
